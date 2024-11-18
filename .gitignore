@@ -1,0 +1,7 @@
+venv/
+.ipynb_checkpoints/
+spotify_keys.json
+etsy_api.json
+refresh_token.txt
+.cache*
+__pycache__/

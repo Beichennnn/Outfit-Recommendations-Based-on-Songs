@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfit Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1> Outfit Recommendations </h1>
+    
+        {% for song in songs %}
+        <div class="song">
+            <!-- Album Section -->
+            <img src="{{ song.album_image_url }}" alt="Album Art">
+    
+            <!-- Song Details and Outfits Section -->
+            <div class="song-details">
+                <h2>{{ song.track_name }} by {{ song.artist_name }}</h2>
+                <div class="colors">
+                    {% for color in song.colors %}
+                    <div class="color" style="background-color: rgb({{ color[0] }}, {{ color[1] }}, {{ color[2] }});"></div>
+                    {% endfor %}
+                </div>
+    
+                <!-- Button to Fetch Outfits -->
+                <button onclick="fetchOutfits({{ loop.index0 }})">View Outfits</button>
+    
+                <!-- Outfits Section -->
+                <div class="outfits-container" id="outfits-{{ loop.index0 }}"></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <script>
+        function fetchOutfits(songIndex) {
+            const gender = "{{ request.form.get('gender', 'women') }}";
+            const season = "{{ request.form.get('season', 'fall') }}";
+            const sortBy = "{{ request.form.get('sort_by', 'score') }}";
+    
+            fetch('/fetch_outfits', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ song_index: songIndex, gender: gender, season: season, sort_by: sortBy }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const outfitsContainer = document.getElementById(`outfits-${songIndex}`);
+                    outfitsContainer.innerHTML = ''; // Clear previous results
+    
+                    data.outfits.forEach(outfit => {
+                        const outfitDiv = document.createElement('div');
+                        outfitDiv.className = 'outfit';
+                        outfitDiv.innerHTML = `
+                            <h4>${outfit.title}</h4>
+                            <p>Price: ${outfit.price} ${outfit.currency}</p>
+                            <a href="${outfit.link}" target="_blank">View on Etsy</a>
+                            ${outfit.image_url ? `<img src="${outfit.image_url}" alt="Outfit Image">` : '<p>[No Image Available]</p>'}
+                        `;
+                        outfitsContainer.appendChild(outfitDiv);
+                    });
+                } else {
+                    console.error(data.error || 'Error fetching outfits.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+    
+</body>
+</html>

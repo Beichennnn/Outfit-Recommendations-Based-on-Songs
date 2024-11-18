@@ -1,0 +1,160 @@
+
+body {
+    background-color: #2c1305; 
+    color: #EBE1A9; 
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 50px; 
+}
+
+form {
+    display: flex;
+    flex-direction: row; 
+    gap: 20px; 
+}
+
+label {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+select, button {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #81474C; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #662B2F; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Song Section */
+.song {
+    background-color: #796860; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
+    margin-bottom: 40px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.song img {
+    border-radius: 10px;
+    width: 200px;
+    height: auto;
+}
+
+.song-details {
+    flex: 1;
+}
+
+.colors {
+    display: flex;
+    margin: 10px 0;
+    gap: 10px;
+}
+
+.color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #D6BC46; 
+    display: inline-block;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 15px;
+    background-color: #7C4449;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #A85858;
+}
+
+/* Outfits Section */
+.outfits-container {
+    margin-top: 20px;
+}
+
+.outfit {
+    background-color: #585248; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+    padding: 10px;
+    text-align: center;
+    width: 180px; 
+    margin: 10px; 
+    display: inline-block;
+    vertical-align: top;
+    color: #E7CAD3; 
+}
+
+.outfit img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.outfit h4 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.outfit p {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.outfit a {
+    text-decoration: none;
+    color: #D9A0B3; 
+    font-weight: bold;
+}
+
+.outfit a:hover {
+    color: #BE8A2F; 
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .song {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .song img {
+        margin-bottom: 20px;
+    }
+}
