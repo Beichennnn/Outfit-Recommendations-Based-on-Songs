@@ -16,11 +16,15 @@ A dynamic and interactive website that combines your favorite Spotify songs with
 
 - Modern and responsive design using **CSS** with harmonious color schemes.
 
+  index.html:
+
   ![index.html](https://media.discordapp.net/attachments/1138186732093833329/1308386956794920960/image.png?ex=673dc1cf&is=673c704f&hm=4cdbf7bec34c3cc95fdc70b4d1fb5dfe98f089fc28a1bdd1608efef4910f2f62&=&format=webp&quality=lossless&width=1395&height=771)
 
-  ![result.html](https://media.discordapp.net/attachments/1138186732093833329/1308387627795218493/image.png?ex=673dc26f&is=673c70ef&hm=992985badfe87cf15d13d2ff24fd0ab837bb002cb9e942813ef53530ddadd0aa&=&format=webp&quality=lossless&width=1342&height=771)
+  results.html:
 
-  ![result.html](https://media.discordapp.net/attachments/1138186732093833329/1308388139210899526/image.png?ex=673dc2e9&is=673c7169&hm=ea81c5c4a2ba63499c1aca42de636cbc1f72bdf99640f320ea957f93708bdbde&=&format=webp&quality=lossless&width=1342&height=771)
+  ![results.html](https://media.discordapp.net/attachments/1138186732093833329/1308387627795218493/image.png?ex=673dc26f&is=673c70ef&hm=992985badfe87cf15d13d2ff24fd0ab837bb002cb9e942813ef53530ddadd0aa&=&format=webp&quality=lossless&width=1342&height=771)
+
+  ![results.html](https://media.discordapp.net/attachments/1138186732093833329/1308388139210899526/image.png?ex=673dc2e9&is=673c7169&hm=ea81c5c4a2ba63499c1aca42de636cbc1f72bdf99640f320ea957f93708bdbde&=&format=webp&quality=lossless&width=1342&height=771)
 
   
 
