@@ -102,7 +102,25 @@ A dynamic and interactive website that combines your favorite Spotify songs with
      }
      ```
 
-   - Follow [Etsy OAuth steps]([Listings Tutorial | Etsy Open API v3](https://developer.etsy.com/documentation/tutorials/listings/)) to obtain your **Refresh Token**.
+   - Put your Website URL (In my case is http://localhost)
+   
+   - Put your Callback URLs (In my case is http://localhost:8000/callback)
+   
+   - **Build the Authorization URL:** Use your client ID and other required parameters to build an authorization URL. This URL directs users to log in to their Etsy account and authorize your app. You would have specified scopes that determine the level of access your application requires, and a `redirect_uri` that Etsy will send users back to after authorization.
+   
+   - **User Authorization:** You open this URL in a web browser. The user logs in if necessary, and approves the requested permissions. Etsy then redirects the user back to your `redirect_uri` with an authorization code included in the query string.
+   
+   - **Exchange Authorization Code for Tokens:** You then take this authorization code and make a server-to-server request to Etsy's token endpoint to exchange the authorization code for an access token and a refresh token. The request includes your client ID, client secret, and the authorization code.
+   
+   - **Store the Refresh Token:** Once you receive the access token and the refresh token, you should securely store the refresh token. In my case I saved in:
+   
+   - ```
+     refresh_token.txt
+     ```
+   
+     It can be used to obtain new access tokens without user interaction once the current access token expires.
+   
+   - Follow [Etsy OAuth steps]([Listings Tutorial | Etsy Open API v3](https://developer.etsy.com/documentation/essentials/authentication#redirect-uris)) as reference.
 
 
 
